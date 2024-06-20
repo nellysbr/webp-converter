@@ -7,7 +7,7 @@ Faz a conversão de imagens para webp de forma recursiva em um diretório.
 Após clonar o repositório, execute o comando abaixo para tornar o script executável:
 
 ```bash
-chmod +x converter_para_webp.sh
+chmod +x img_convert.sh
 
 
 ```
@@ -18,8 +18,8 @@ altere a seguinte linha para converter as imagens dentro de uma pasta específic
 
 ```bash
 
-INPUT_DIR="/home/nellys/Documents/sites/action-citroen-new/public/assets/images"
+./img_convert.sh /caminho_da_pasta
 
 ```
 
-O script irá converter todas as imagens para webp e salvará na mesma pasta.
+O script irá converter todas as imagens da pasta e subpastas para webp e salvará na mesma pasta.
