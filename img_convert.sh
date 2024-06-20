@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# Diretório contendo as imagens (alterar conforme necessário)
+# Diretório contendo as imagens
 INPUT_DIR="/home/nellys/Documents/sites/action-citroen-new/public/assets/images"
 
 # Verifica se o diretório existe
@@ -23,9 +23,17 @@ for IMAGE in "$INPUT_DIR"/*.{png,jpg,jpeg}; do
 
   # Converte a imagem para WebP no mesmo diretório
   cwebp "$IMAGE" -o "$INPUT_DIR/$FILENAME.webp"
-
-  # Exibe uma mensagem de sucesso
-  echo "Convertido: $IMAGE -> $INPUT_DIR/$FILENAME.webp"
+  
+  # Verifica se a conversão foi bem-sucedida
+  if [ $? -eq 0 ]; then
+    # Exclui a imagem original
+    rm "$IMAGE"
+    # Exibe uma mensagem de sucesso
+    echo "Convertido e deletado: $IMAGE -> $INPUT_DIR/$FILENAME.webp"
+  else
+    # Exibe uma mensagem de erro se a conversão falhar
+    echo "Erro ao converter: $IMAGE"
+  fi
 done
 
 echo "Conversão concluída."
