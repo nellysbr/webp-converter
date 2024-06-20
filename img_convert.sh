@@ -1,7 +1,13 @@
 #!/bin/bash
 
+# Verifica se um argumento foi fornecido
+if [ $# -eq 0 ]; then
+  echo "Uso: $0 <diretório>"
+  exit 1
+fi
+
 # Diretório contendo as imagens
-INPUT_DIR="/home/nellys/Documents/sites/action-citroen-new/public/assets/images"
+INPUT_DIR="$1"
 
 # Verifica se o diretório existe
 if [ ! -d "$INPUT_DIR" ]; then
