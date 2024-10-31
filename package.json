@@ -1,0 +1,15 @@
+{
+  "name": "webp-converter",
+  "version": "1.0.0",
+  "description": "Faz a conversão de imagens para webp de forma recursiva em um diretório.",
+  "main": "convert_to_webp.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "sharp": "^0.33.5"
+  }
+}
